@@ -8,7 +8,7 @@ class ToDoList:
 
     def view_tasks(self):
         if not self.tasks:
-            print("Your to-do list is empty.")
+            print("Your to-do list is empty. Please include a task to your to-do list.")
         else:
             print("\nYour To-Do List:")
             for idx, task in enumerate(self.tasks, start=1):
@@ -20,14 +20,14 @@ class ToDoList:
             removed_task = self.tasks.pop(task_number - 1)
             print(f'Task "{removed_task["task"]}" removed from your to-do list.')
         else:
-            print("Invalid task number.")
+            print("Invalid task number. Please a number based on the view list.")
 
     def mark_task_completed(self, task_number):
         if 0 < task_number <= len(self.tasks):
             self.tasks[task_number - 1]["completed"] = True
             print(f'Task "{self.tasks[task_number - 1]["task"]}" marked as completed.')
         else:
-            print("Invalid task number.")
+            print("Invalid task number. Please a number based on the view list.")
 
 def main():
     todo = ToDoList()
